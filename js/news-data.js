@@ -10,23 +10,28 @@ const NEWS_DATA = [
     title: "オフィシャルウェブサイトをリニューアルしました。"
   },
   {
-    date: "2025.03.15",
+    date: "2024.05.01",
     category: "STAGE",
-    title: "【舞台】〇〇〇公演への出演が決定しました。詳細は後日お知らせいたします。"
+    title: "「ベルサイユのばら50〜半世紀の軌跡〜」に出演いたします。（梅田芸術劇場・東京建物 Brillia HALL・御園座）"
   },
   {
-    date: "2025.02.10",
+    date: "2023.10.01",
+    category: "STAGE",
+    title: "「Greatest Dream」に出演いたします。（梅田芸術劇場・東京建物 Brillia HALL）"
+  },
+  {
+    date: "2022.09.01",
+    category: "STAGE",
+    title: "「Dramatic City "夢"」に出演いたします。（東京建物 Brillia HALL・ドラマシティ）"
+  },
+  {
+    date: "2020.06.01",
     category: "MEDIA",
-    title: "【取材】〇〇雑誌 2025年3月号に掲載されました。"
+    title: "NHK連続テレビ小説「エール」にミス仙台役で出演いたしました。"
   },
   {
-    date: "2025.01.20",
-    category: "INFORMATION",
-    title: "Instagramを更新しました。ぜひご覧ください。"
-  },
-  {
-    date: "2024.12.25",
+    date: "2019.06.01",
     category: "STAGE",
-    title: "〇〇〇公演、無事に千秋楽を迎えることができました。ご来場いただいた皆様、ありがとうございました。"
+    title: "「エリザベート」に出演いたします。（帝国劇場）"
   }
 ];

@@ -65,7 +65,7 @@ saizuki/
 
 ```html
 <a href="https://www.instagram.com/【あなたのID】/">Instagram</a>
-<a href="https://twitter.com/【あなたのID】">X / Twitter</a>
+<a href="https://x.com/【あなたのID】">X / Twitter</a>
 ```
 
 ### プロフィール文を編集する

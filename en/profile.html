@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile | 彩月つくし SAIZUKI TSUKUSHI Official Website</title>
-  <meta name="description" content="彩月つくし プロフィール。元宝塚歌劇団雪組97期生。身長162cm。女優・タレントとして舞台・映像・MCなど幅広く活動中。">
+  <title>Profile | Saizuki Tsukushi Official Website</title>
+  <meta name="description" content="Saizuki Tsukushi Profile. Former Takarazuka Revue Snow Troupe member (97th class). Height 162 cm. Active as an actress and talent in stage, film, MC, and more.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Profile | 彩月つくし">
-  <meta property="og:url" content="https://saizuki.com/profile.html">
-  <meta property="og:description" content="彩月つくし プロフィール。元宝塚歌劇団雪組97期生。女優・タレントとして活動中。">
+  <meta property="og:title" content="Profile | Saizuki Tsukushi">
+  <meta property="og:url" content="https://saizuki.com/en/profile.html">
+  <meta property="og:description" content="Saizuki Tsukushi Profile. Former Takarazuka Revue Snow Troupe member (97th class). Active as an actress and talent.">
   <meta property="og:image" content="https://saizuki.com/images/og-image.jpg">
   <meta property="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://saizuki.com/profile.html">
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <link rel="alternate" hreflang="ja" href="https://saizuki.com/profile.html">
-  <link rel="alternate" hreflang="en" href="https://saizuki.com/en/profile.html">
-  <link rel="alternate" hreflang="x-default" href="https://saizuki.com/profile.html">
+  <link rel="canonical" href="https://saizuki.com/en/profile.html">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="theme-color" content="#0a0a0a">
@@ -24,12 +21,12 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saizuki.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Profile", "item": "https://saizuki.com/profile.html" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saizuki.com/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Profile", "item": "https://saizuki.com/en/profile.html" }
     ]
   }
   </script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <style>
     .profile-layout {
       display: grid;
@@ -49,11 +46,6 @@
       aspect-ratio: 3/4;
       object-fit: cover;
       object-position: center top;
-      /*
-        ★ 写真の配置方法 ★
-        images/profile.jpg に保存してください。
-        推奨サイズ: 760×1014px 以上
-      */
     }
     .profile-photo-placeholder {
       width: 100%;
@@ -160,7 +152,7 @@
 <nav class="nav">
   <a href="index.html" class="nav-logo">
     Saizuki Tsukushi
-    <span>彩月つくし Official</span>
+    <span>Official</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -170,12 +162,9 @@
     <li><a href="works.html">Works</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:16px;">
-    <a href="en/profile.html" class="nav-lang">EN</a>
-    <button class="nav-toggle" aria-label="メニュー">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+  <button class="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 <div class="nav-mobile">
   <a href="index.html">Home</a>
@@ -184,19 +173,16 @@
   <a href="biography.html">Biography</a>
   <a href="works.html">Works</a>
   <a href="contact.html">Contact</a>
-  <a href="en/profile.html" style="font-size:0.9rem;color:var(--accent);margin-top:20px;">English</a>
 </div>
 
 <main>
 <div class="page-header">
   <h1 class="page-header-en">Profile</h1>
-  <p class="page-header-ja">プロフィール</p>
 </div>
 
 <div class="profile-layout">
-  <!-- 写真 -->
   <div class="profile-photo-wrap fade-in">
-    <img src="images/profile.jpg" alt="彩月つくし プロフィール写真"
+    <img src="../images/profile.jpg" alt="Saizuki Tsukushi profile photo"
          class="profile-photo"
          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
     <div class="profile-photo-placeholder" style="display:none;">
@@ -204,39 +190,38 @@
     </div>
   </div>
 
-  <!-- テキスト情報 -->
   <div class="profile-info fade-in">
     <p class="profile-name-ja">彩月 つくし</p>
     <p class="profile-name-en">SAIZUKI TSUKUSHI</p>
 
     <table class="profile-table">
       <tr>
-        <th>生年月日</th>
-        <td>8月6日</td>
+        <th>Date of Birth</th>
+        <td>August 6</td>
       </tr>
       <tr>
-        <th>出身地</th>
-        <td>福岡県福岡市</td>
+        <th>Birthplace</th>
+        <td>Fukuoka City, Fukuoka</td>
       </tr>
       <tr>
-        <th>身長</th>
+        <th>Height</th>
         <td>162 cm</td>
       </tr>
       <tr>
-        <th>血液型</th>
-        <td>B 型</td>
+        <th>Blood Type</th>
+        <td>Type B</td>
       </tr>
       <tr>
-        <th>出身校</th>
-        <td>宝塚音楽学校（2009年入学）</td>
+        <th>School</th>
+        <td>Takarazuka Music School (enrolled 2009)</td>
       </tr>
       <tr>
-        <th>前所属</th>
-        <td>宝塚歌劇団 雪組（97期生）</td>
+        <th>Former Affiliation</th>
+        <td>Takarazuka Revue Snow Troupe (97th class)</td>
       </tr>
       <tr>
-        <th>所属事務所</th>
-        <td>バニラ</td>
+        <th>Agency</th>
+        <td>Vanilla</td>
       </tr>
       <tr>
         <th>SNS</th>
@@ -251,30 +236,30 @@
     </table>
 
     <div class="profile-bio">
-      <!--
-        ★ プロフィール文をここに入力してください ★
-      -->
       <p>
-        福岡県福岡市出身。2009年、宝塚音楽学校に入学。
-        2011年、宝塚歌劇団に97期生として入団（入団時成績7番）。
-        星組公演「ノバ・ボサ・ノバ／めぐり会いは再び」で初舞台を踏む。
+        Born in Fukuoka City, Fukuoka. In 2009, she enrolled in the Takarazuka Music School.
+        In 2011, she joined the Takarazuka Revue as a member of the 97th class (ranked 7th upon admission).
+        She made her debut on the Star Troupe production "Nova Bossa Nova / Meguriai wa Futatabi."
       </p>
       <p>
-        2012年、雪組に配属。数々の公演に出演し、娘役として舞台経験を積む。
-        2016年8月15日、「ローマの休日」千秋楽をもって宝塚歌劇団を退団。
+        In 2012, she was assigned to the Snow Troupe. She appeared in numerous productions,
+        building her experience as a musumeyaku (female role performer).
+        On August 15, 2016, she retired from the Takarazuka Revue with the final performance of "Roman Holiday."
       </p>
       <p>
-        退団後は舞台・映像・MC・講演など幅広いフィールドで活動を続けている。
-        2019年にはミュージカル「エリザベート」（帝国劇場）に出演。
-        2020年にはNHK連続テレビ小説「エール」にミス仙台役で出演した。
-        2024年には「ベルサイユのばら50〜半世紀の軌跡〜」に出演。
-        宝塚で培った表現力と品格を活かし、唯一無二の存在として輝き続けている。
+        After leaving Takarazuka, she has continued to be active across a wide range of fields,
+        including stage, film, MC hosting, and lectures.
+        In 2019, she appeared in the musical "Elisabeth" at the Imperial Theatre.
+        In 2020, she appeared as Miss Sendai in the NHK morning drama "Yell."
+        In 2024, she appeared in "The Rose of Versailles 50: Half a Century of Legacy."
+        Drawing on the expressive power and elegance cultivated at Takarazuka,
+        she continues to shine as a truly one-of-a-kind performer.
       </p>
       <p>
-        また、退団後に高等学校卒業程度認定試験に合格し、
-        2017年に慶應義塾大学経済学部通信教育課程に入学。
-        8年半の学業を経て2026年3月に卒業。
-        舞台活動と学業を両立させる姿勢でも注目を集めている。
+        Additionally, after leaving Takarazuka, she passed the Certificate for Students Achieving the Proficiency Level of Upper Secondary School Graduates.
+        In 2017, she enrolled in the Faculty of Economics at Keio University (correspondence course).
+        After eight and a half years of study, she graduated in March 2026.
+        Her dedication to balancing both her performing career and academic pursuits has drawn widespread admiration.
       </p>
     </div>
 
@@ -292,9 +277,9 @@
     <a href="https://www.instagram.com/iii_tsukushi_iii/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://x.com/ii_tsukushi_ii" target="_blank" rel="noopener">X / Twitter</a>
   </div>
-  <p class="footer-copy">© SAIZUKI TSUKUSHI All rights reserved.</p>
+  <p class="footer-copy">&copy; SAIZUKI TSUKUSHI All rights reserved.</p>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

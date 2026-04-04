@@ -87,6 +87,23 @@ ul { list-style: none; }
   position: relative;
   padding-bottom: 4px;
 }
+/* Language switcher */
+.nav-lang {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  transition: border-color 0.3s, color 0.3s;
+  margin-left: 8px;
+}
+.nav-lang:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .nav-links a::after {
   content: '';
   position: absolute;

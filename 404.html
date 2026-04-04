@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | 彩月つくし SAIZUKI TSUKUSHI</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .error-wrap {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px;
+    }
+    .error-code {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .error-message {
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin: 24px 0 48px;
+      line-height: 1.8;
+    }
+    .error-back {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      padding: 14px 40px;
+      color: var(--text-muted);
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .error-back:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled">
+  <a href="/index.html" class="nav-logo">
+    Saizuki Tsukushi
+    <span>彩月つくし Official</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/profile.html">Profile</a></li>
+    <li><a href="/news.html">News</a></li>
+    <li><a href="/biography.html">Biography</a></li>
+    <li><a href="/works.html">Works</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile">
+  <a href="/index.html">Home</a>
+  <a href="/profile.html">Profile</a>
+  <a href="/news.html">News</a>
+  <a href="/biography.html">Biography</a>
+  <a href="/works.html">Works</a>
+  <a href="/contact.html">Contact</a>
+</div>
+
+<main>
+  <div class="error-wrap">
+    <p class="error-code">404</p>
+    <p class="error-message">
+      お探しのページが見つかりませんでした。<br>
+      The page you are looking for could not be found.
+    </p>
+    <a href="/index.html" class="error-back">Back to Home</a>
+  </div>
+</main>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
