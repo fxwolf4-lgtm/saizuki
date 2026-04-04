@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | 彩月つくし SAIZUKI TSUKUSHI Official Website</title>
+  <meta name="description" content="彩月つくし プロフィール。元宝塚歌劇団雪組97期生。身長162cm。女優・タレントとして舞台・映像・MCなど幅広く活動中。">
+  <meta property="og:title" content="Profile | 彩月つくし">
+  <meta property="og:url" content="https://saizuki.com/profile.html">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      align-items: start;
+    }
+    .profile-photo-wrap {
+      position: sticky;
+      top: calc(var(--nav-height) + 32px);
+    }
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      /*
+        ★ 写真の配置方法 ★
+        images/profile.jpg に保存してください。
+        推奨サイズ: 760×1014px 以上
+      */
+    }
+    .profile-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+    }
+    .profile-info { padding-top: 8px; }
+    .profile-name-ja {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      line-height: 1.4;
+    }
+    .profile-name-en {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+    .profile-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 48px;
+    }
+    .profile-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .profile-table th {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-align: left;
+      padding: 16px 24px 16px 0;
+      white-space: nowrap;
+      vertical-align: top;
+      width: 130px;
+      font-weight: 400;
+    }
+    .profile-table td {
+      font-size: 0.82rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+      padding: 16px 0;
+      color: var(--text);
+    }
+    .profile-bio {
+      font-size: 0.85rem;
+      line-height: 2;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      border-top: 1px solid var(--border);
+      padding-top: 40px;
+    }
+    .profile-bio p + p { margin-top: 1.5em; }
+    .profile-sns {
+      margin-top: 48px;
+      display: flex;
+      gap: 20px;
+    }
+    .profile-sns a {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      padding: 12px 28px;
+      color: var(--text-muted);
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .profile-sns a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .profile-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 60px 24px;
+      }
+      .profile-photo-wrap { position: static; }
+      .profile-photo, .profile-photo-placeholder {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    Saizuki Tsukushi
+    <span>彩月つくし Official</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="biography.html">Biography</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="profile.html">Profile</a>
+  <a href="news.html">News</a>
+  <a href="biography.html">Biography</a>
+  <a href="works.html">Works</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-header">
+  <h1 class="page-header-en">Profile</h1>
+  <p class="page-header-ja">プロフィール</p>
+</div>
+
+<div class="profile-layout">
+  <!-- 写真 -->
+  <div class="profile-photo-wrap fade-in">
+    <img src="images/profile.jpg" alt="彩月つくし プロフィール写真"
+         class="profile-photo"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="profile-photo-placeholder" style="display:none;">
+      Photo<br>profile.jpg
+    </div>
+  </div>
+
+  <!-- テキスト情報 -->
+  <div class="profile-info fade-in">
+    <p class="profile-name-ja">彩月 つくし</p>
+    <p class="profile-name-en">SAIZUKI TSUKUSHI</p>
+
+    <table class="profile-table">
+      <tr>
+        <th>生年月日</th>
+        <td>8月6日</td>
+      </tr>
+      <tr>
+        <th>出身地</th>
+        <td>福岡県福岡市</td>
+      </tr>
+      <tr>
+        <th>身長</th>
+        <td>162 cm</td>
+      </tr>
+      <tr>
+        <th>血液型</th>
+        <td>B 型</td>
+      </tr>
+      <tr>
+        <th>出身校</th>
+        <td>宝塚音楽学校（2009年入学）</td>
+      </tr>
+      <tr>
+        <th>前所属</th>
+        <td>宝塚歌劇団 雪組（97期生）</td>
+      </tr>
+      <tr>
+        <th>所属事務所</th>
+        <td>バニラ</td>
+      </tr>
+      <tr>
+        <th>SNS</th>
+        <td>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+             style="color:var(--accent); letter-spacing:0.1em;">Instagram</a>
+          &ensp;/&ensp;
+          <a href="https://twitter.com/" target="_blank" rel="noopener"
+             style="color:var(--accent); letter-spacing:0.1em;">X / Twitter</a>
+        </td>
+      </tr>
+    </table>
+
+    <div class="profile-bio">
+      <!--
+        ★ プロフィール文をここに入力してください ★
+      -->
+      <p>
+        福岡県福岡市出身。2009年、宝塚音楽学校に入学。
+        2011年、宝塚歌劇団に97期生として入団（入団時成績7番）。
+        星組公演「ノバ・ボサ・ノバ／めぐり会いは再び」で初舞台を踏む。
+      </p>
+      <p>
+        2012年、雪組に配属。数々の公演に出演し、娘役として舞台経験を積む。
+        2016年8月15日、「ローマの休日」千秋楽をもって宝塚歌劇団を退団。
+      </p>
+      <p>
+        退団後は舞台・映像・MC・講演など幅広いフィールドで活動を続けている。
+        宝塚で培った表現力と品格を活かし、唯一無二の存在として輝き続けている。
+      </p>
+    </div>
+
+    <div class="profile-sns">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com/" target="_blank" rel="noopener">X / Twitter</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">SAIZUKI TSUKUSHI</div>
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://twitter.com/" target="_blank" rel="noopener">X / Twitter</a>
+  </div>
+  <p class="footer-copy">© SAIZUKI TSUKUSHI All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

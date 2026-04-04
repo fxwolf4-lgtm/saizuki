@@ -1,0 +1,261 @@
+/* ================================================
+   SAIZUKI TSUKUSHI — Official Website
+   Design: Luxury Monochrome Minimalism
+   Fonts: Cormorant Garamond (display) + Raleway (body)
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@200;300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap');
+
+:root {
+  --bg:         #0a0a0a;
+  --bg-light:   #111111;
+  --surface:    #161616;
+  --border:     rgba(255,255,255,0.08);
+  --text:       #f0ede8;
+  --text-muted: rgba(240,237,232,0.45);
+  --accent:     #c9b99a;
+  --accent-dim: rgba(201,185,154,0.15);
+  --white:      #ffffff;
+
+  --font-display: 'Cormorant Garamond', 'Noto Serif JP', serif;
+  --font-body:    'Raleway', sans-serif;
+
+  --nav-height: 72px;
+  --transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* ── Navigation ── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  transition: background var(--transition), backdrop-filter var(--transition);
+}
+.nav.scrolled {
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.nav-logo span {
+  display: block;
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  color: var(--accent);
+  margin-top: 2px;
+}
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.3s;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+/* ── Hamburger (mobile) ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px; height: 1px;
+  background: var(--text);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Mobile menu */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(10,10,10,0.97);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.nav-mobile.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.nav-mobile a {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+.nav-mobile a:hover { color: var(--accent); }
+
+/* ── Page Header (inner pages) ── */
+.page-header {
+  padding: calc(var(--nav-height) + 80px) 48px 60px;
+  border-bottom: 1px solid var(--border);
+}
+.page-header-en {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  color: var(--text);
+}
+.page-header-ja {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: var(--accent);
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+/* ── Section utility ── */
+.section { padding: 80px 48px; }
+.section-title {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.45em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  font-size: 0.95rem;
+}
+.footer-sns {
+  display: flex;
+  gap: 24px;
+}
+.footer-sns a {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+.footer-sns a:hover { color: var(--accent); }
+.footer-copy {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ── Fade-in animation ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Divider line ── */
+.divider {
+  width: 1px;
+  height: 60px;
+  background: var(--border);
+  margin: 0 auto 48px;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 768px) {
+  .nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-mobile { display: flex; }
+  .page-header { padding: calc(var(--nav-height) + 40px) 24px 40px; }
+  .section { padding: 60px 24px; }
+  footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+  .footer-copy { text-align: left; }
+}

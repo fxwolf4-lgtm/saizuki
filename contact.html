@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | 彩月つくし SAIZUKI TSUKUSHI Official Website</title>
+  <meta name="description" content="彩月つくしへのお仕事のご依頼・お問い合わせはこちら。出演依頼・メディア取材・各種ご相談を承っております。">
+  <meta property="og:title" content="Contact | 彩月つくし">
+  <meta property="og:url" content="https://saizuki.com/contact.html">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 48px;
+    }
+    .contact-intro {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 2;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 64px;
+      border-left: 1px solid var(--accent);
+      padding-left: 28px;
+    }
+    .contact-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      margin-bottom: 80px;
+      background: var(--border);
+    }
+    .contact-type {
+      background: var(--bg);
+      padding: 32px 28px;
+    }
+    .contact-type-icon {
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+    }
+    .contact-type-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .contact-type-desc {
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    /* Google Form embed */
+    .form-section { margin-bottom: 80px; }
+    .form-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.45em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .form-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .form-embed-wrap {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    .form-embed-wrap iframe {
+      width: 100%;
+      min-height: 900px;
+      border: none;
+      display: block;
+      /* iframeの背景を合わせるためのCSS */
+      filter: invert(0.92) hue-rotate(180deg);
+      /* ↑ Googleフォームをダークテーマに合わせる（好みで削除可） */
+    }
+
+    /* フォームURLが設定されていない場合の案内 */
+    .form-placeholder {
+      padding: 60px 48px;
+      text-align: center;
+    }
+    .form-placeholder p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 2;
+      letter-spacing: 0.05em;
+    }
+    .form-placeholder code {
+      display: inline-block;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      margin-top: 16px;
+      color: var(--accent);
+    }
+
+    /* プライバシーポリシー */
+    .privacy-section {
+      border-top: 1px solid var(--border);
+      padding-top: 64px;
+    }
+    .privacy-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 32px;
+    }
+    .privacy-text {
+      font-size: 0.78rem;
+      font-weight: 300;
+      line-height: 2.1;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .privacy-text h3 {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--text);
+      margin: 28px 0 10px;
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrap { padding: 60px 24px; }
+      .form-embed-wrap iframe { min-height: 1100px; }
+      .form-placeholder { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    Saizuki Tsukushi
+    <span>彩月つくし Official</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="biography.html">Biography</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="profile.html">Profile</a>
+  <a href="news.html">News</a>
+  <a href="biography.html">Biography</a>
+  <a href="works.html">Works</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-header">
+  <h1 class="page-header-en">Contact</h1>
+  <p class="page-header-ja">お問い合わせ</p>
+</div>
+
+<div class="contact-wrap">
+
+  <p class="contact-intro fade-in">
+    お仕事のご依頼・各種お問い合わせは、下記のフォームよりお気軽にどうぞ。<br>
+    内容を確認のうえ、担当者よりご連絡いたします。<br>
+    なお、ファンの方からのメッセージも大切に拝読しております。
+  </p>
+
+  <!-- お問い合わせ種別 -->
+  <div class="contact-types fade-in">
+    <div class="contact-type">
+      <div class="contact-type-icon">🎭</div>
+      <p class="contact-type-title">出演依頼</p>
+      <p class="contact-type-desc">舞台・映像・CM・イベント出演のご依頼</p>
+    </div>
+    <div class="contact-type">
+      <div class="contact-type-icon">📰</div>
+      <p class="contact-type-title">メディア取材</p>
+      <p class="contact-type-desc">雑誌・WEB・テレビ等の取材・インタビューのご依頼</p>
+    </div>
+    <div class="contact-type">
+      <div class="contact-type-icon">🎤</div>
+      <p class="contact-type-title">MC・講演</p>
+      <p class="contact-type-desc">司会進行・トークショー・講演のご依頼</p>
+    </div>
+    <div class="contact-type">
+      <div class="contact-type-icon">✉️</div>
+      <p class="contact-type-title">ファンメール</p>
+      <p class="contact-type-desc">応援メッセージ・お手紙</p>
+    </div>
+  </div>
+
+  <!-- フォーム -->
+  <div class="form-section fade-in">
+    <p class="form-label">Inquiry Form</p>
+    <div class="form-embed-wrap">
+      <!--
+        ★ Googleフォームの埋め込み方法 ★
+
+        1. Googleフォームで以下の項目を作成:
+           - お名前（必須）
+           - メールアドレス（必須）
+           - お問い合わせ種別（ドロップダウン: 出演依頼/メディア取材/MC・講演/ファンメール/その他）
+           - 件名
+           - お問い合わせ内容（必須・段落）
+           - 個人情報の取扱いへの同意（チェックボックス）
+
+        2. フォームの「送信」→「<>（埋め込み）」をクリック
+        3. 表示されたiframeタグのsrc属性のURLをコピー
+        4. 下のiframeのsrcを差し替える
+
+        ★ filter: invert の行を削除すると通常の白背景になります ★
+      -->
+      <div class="form-placeholder" id="form-placeholder">
+        <p>
+          Googleフォームを作成し、以下のsrcに埋め込みURLを設定してください。
+        </p>
+        <code>iframe src="YOUR_GOOGLE_FORM_URL"</code>
+      </div>
+      <!--
+      <iframe
+        src="https://docs.google.com/forms/d/e/xxxxxxxxxxxxxxxxxx/viewform?embedded=true"
+        title="お問い合わせフォーム"
+        loading="lazy">
+      </iframe>
+      -->
+    </div>
+  </div>
+
+  <!-- プライバシーポリシー -->
+  <div class="privacy-section fade-in">
+    <h2 class="privacy-title">Privacy Policy</h2>
+    <div class="privacy-text">
+      <p>
+        彩月つくし（以下「当サイト」）は、お問い合わせいただいた際にご提供いただく個人情報について、
+        以下のとおり適切に取り扱います。
+      </p>
+
+      <h3>1. 取得する個人情報</h3>
+      <p>お問い合わせフォームを通じて、お名前・メールアドレス・お問い合わせ内容等をお預かりします。</p>
+
+      <h3>2. 利用目的</h3>
+      <p>
+        取得した個人情報は、お問い合わせへの回答・ご連絡のみに使用します。
+        ご本人の同意なく第三者への提供は行いません。
+      </p>
+
+      <h3>3. 個人情報の管理</h3>
+      <p>
+        取得した個人情報は、適切なセキュリティ対策のもとGoogle Workspaceにて管理し、
+        問い合わせ対応後は速やかに削除または匿名化します。
+      </p>
+
+      <h3>4. お問い合わせ</h3>
+      <p>
+        個人情報の取り扱いに関するお問い合わせは、上記フォームよりご連絡ください。
+      </p>
+    </div>
+  </div>
+
+</div><!-- /contact-wrap -->
+
+<footer>
+  <div class="footer-logo">SAIZUKI TSUKUSHI</div>
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://twitter.com/" target="_blank" rel="noopener">X / Twitter</a>
+  </div>
+  <p class="footer-copy">© SAIZUKI TSUKUSHI All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

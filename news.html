@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News | 彩月つくし SAIZUKI TSUKUSHI Official Website</title>
+  <meta name="description" content="彩月つくし 最新ニュース・お知らせ一覧。舞台・メディア出演・イベント情報など。">
+  <meta property="og:title" content="News | 彩月つくし">
+  <meta property="og:url" content="https://saizuki.com/news.html">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .news-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 48px;
+    }
+    .news-filters {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .filter-btn {
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      padding: 8px 20px;
+      background: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .news-list-full { display: flex; flex-direction: column; }
+    .news-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      transition: opacity 0.3s;
+      cursor: default;
+    }
+    .news-item:hover { opacity: 0.65; }
+    .news-date {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      padding-top: 4px;
+    }
+    .news-cat {
+      display: inline-block;
+      font-size: 0.5rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 2px 8px;
+      margin-bottom: 10px;
+    }
+    .news-title {
+      font-size: 0.88rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+    .news-item[data-hidden="true"] { display: none; }
+
+    @media (max-width: 768px) {
+      .news-wrap { padding: 60px 24px; }
+      .news-item { grid-template-columns: 1fr; gap: 8px; }
+      .news-date { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    Saizuki Tsukushi
+    <span>彩月つくし Official</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="biography.html">Biography</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="profile.html">Profile</a>
+  <a href="news.html">News</a>
+  <a href="biography.html">Biography</a>
+  <a href="works.html">Works</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-header">
+  <h1 class="page-header-en">News</h1>
+  <p class="page-header-ja">ニュース</p>
+</div>
+
+<div class="news-wrap">
+  <div class="news-filters">
+    <button class="filter-btn active" data-filter="ALL">All</button>
+    <button class="filter-btn" data-filter="INFORMATION">Information</button>
+    <button class="filter-btn" data-filter="STAGE">Stage</button>
+    <button class="filter-btn" data-filter="MEDIA">Media</button>
+  </div>
+
+  <div class="news-list-full" id="news-full"></div>
+</div>
+
+<footer>
+  <div class="footer-logo">SAIZUKI TSUKUSHI</div>
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://twitter.com/" target="_blank" rel="noopener">X / Twitter</a>
+  </div>
+  <p class="footer-copy">© SAIZUKI TSUKUSHI All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/news-data.js"></script>
+<script>
+  /* ── Render news ── */
+  const container = document.getElementById('news-full');
+  NEWS_DATA.forEach(n => {
+    const el = document.createElement('div');
+    el.className = 'news-item fade-in';
+    el.dataset.category = n.category;
+    el.innerHTML = `
+      <div class="news-date">${n.date}</div>
+      <div>
+        <span class="news-cat">${n.category}</span>
+        <div class="news-title">${n.title}</div>
+      </div>`;
+    container.appendChild(el);
+  });
+
+  /* ── Filter ── */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.news-item').forEach(item => {
+        item.dataset.hidden = (f !== 'ALL' && item.dataset.category !== f) ? 'true' : 'false';
+      });
+    });
+  });
+</script>
+</body>
+</html>
