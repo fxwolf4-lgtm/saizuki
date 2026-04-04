@@ -86,17 +86,25 @@
       position: absolute;
       inset: 0;
       opacity: 0;
-      transition: opacity 1.4s ease;
+      z-index: 0;
+      transition: opacity 2.5s ease;
     }
-    .carousel-slide.active { opacity: 1; }
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    .carousel-slide.afterimage {
+      opacity: 0.4;
+      z-index: 0;
+      transition: opacity 3.5s ease;
+    }
     .carousel-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      /* Scale animation for depth */
-      transform: scale(1.06);
-      transition: transform 7s ease;
+      transform: scale(1.08);
+      transition: transform 8s ease;
     }
     .carousel-slide.active img { transform: scale(1); }
 
@@ -308,7 +316,7 @@
     推奨サイズ: 1920×1280px 以上、縦長の場合は 1280×1920px
     形式: JPG または WebP（WebPを強く推奨・ファイルサイズが小さい）
 
-    slide01.jpg, slide02.jpg, slide03.jpg, slide04.jpg, slide05.jpg
+    slide01.jpg, slide02.jpg, slide03.jpg
   -->
   <div class="carousel-slide active">
     <img src="images/slide01.jpg" alt="彩月つくし" loading="eager">
@@ -318,12 +326,6 @@
   </div>
   <div class="carousel-slide">
     <img src="images/slide03.jpg" alt="彩月つくし" loading="lazy">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/slide04.jpg" alt="彩月つくし" loading="lazy">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/slide05.jpg" alt="彩月つくし" loading="lazy">
   </div>
 
   <!-- Logo overlay -->
@@ -370,7 +372,7 @@
 <script src="js/main.js"></script>
 <script src="js/news-data.js"></script>
 <script>
-  /* ── Carousel logic ── */
+  /* ── Carousel logic (残像クロスフェード) ── */
   const slides = document.querySelectorAll('.carousel-slide');
   const dotsWrap = document.getElementById('dots');
   let current = 0, timer;
@@ -383,11 +385,24 @@
   });
 
   function goTo(n) {
-    slides[current].classList.remove('active');
-    dotsWrap.children[current].classList.remove('active');
+    const prev = current;
     current = (n + slides.length) % slides.length;
+    if (prev === current) return;
+
+    /* 前のスライドを残像状態にする */
+    slides[prev].classList.remove('active');
+    slides[prev].classList.add('afterimage');
+    dotsWrap.children[prev].classList.remove('active');
+
+    /* 新しいスライドをアクティブにする */
     slides[current].classList.add('active');
     dotsWrap.children[current].classList.add('active');
+
+    /* 残像を徐々に消す */
+    setTimeout(() => {
+      slides[prev].classList.remove('afterimage');
+    }, 3500);
+
     resetTimer();
   }
 
@@ -395,7 +410,7 @@
 
   function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(next, 5000);
+    timer = setInterval(next, 6000);
   }
   resetTimer();
 

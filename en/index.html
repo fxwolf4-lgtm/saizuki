@@ -83,17 +83,25 @@
       position: absolute;
       inset: 0;
       opacity: 0;
-      transition: opacity 1.4s ease;
+      z-index: 0;
+      transition: opacity 2.5s ease;
     }
-    .carousel-slide.active { opacity: 1; }
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    .carousel-slide.afterimage {
+      opacity: 0.4;
+      z-index: 0;
+      transition: opacity 3.5s ease;
+    }
     .carousel-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      /* Scale animation for depth */
-      transform: scale(1.06);
-      transition: transform 7s ease;
+      transform: scale(1.08);
+      transition: transform 8s ease;
     }
     .carousel-slide.active img { transform: scale(1); }
 
@@ -304,12 +312,6 @@
   <div class="carousel-slide">
     <img src="../images/slide03.jpg" alt="Saizuki Tsukushi" loading="lazy">
   </div>
-  <div class="carousel-slide">
-    <img src="../images/slide04.jpg" alt="Saizuki Tsukushi" loading="lazy">
-  </div>
-  <div class="carousel-slide">
-    <img src="../images/slide05.jpg" alt="Saizuki Tsukushi" loading="lazy">
-  </div>
 
   <!-- Logo overlay -->
   <div class="carousel-logo">
@@ -355,7 +357,7 @@
 <script src="../js/main.js"></script>
 <script src="../js/news-data.js"></script>
 <script>
-  /* ── Carousel logic ── */
+  /* ── Carousel logic (afterimage crossfade) ── */
   const slides = document.querySelectorAll('.carousel-slide');
   const dotsWrap = document.getElementById('dots');
   let current = 0, timer;
@@ -368,11 +370,21 @@
   });
 
   function goTo(n) {
-    slides[current].classList.remove('active');
-    dotsWrap.children[current].classList.remove('active');
+    const prev = current;
     current = (n + slides.length) % slides.length;
+    if (prev === current) return;
+
+    slides[prev].classList.remove('active');
+    slides[prev].classList.add('afterimage');
+    dotsWrap.children[prev].classList.remove('active');
+
     slides[current].classList.add('active');
     dotsWrap.children[current].classList.add('active');
+
+    setTimeout(() => {
+      slides[prev].classList.remove('afterimage');
+    }, 3500);
+
     resetTimer();
   }
 
@@ -380,7 +392,7 @@
 
   function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(next, 5000);
+    timer = setInterval(next, 6000);
   }
   resetTimer();
 
