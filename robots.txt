@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://saizuki.com/sitemap.xml
+Sitemap: https://www.saizuki.com/sitemap.xml

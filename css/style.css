@@ -117,6 +117,26 @@ ul { list-style: none; }
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 100%; }
 
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 14px 40px;
+  color: var(--text);
+  background: transparent;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(201,185,154,0.08);
+}
+
 /* ── Hamburger (mobile) ── */
 .nav-toggle {
   display: none;
@@ -228,13 +248,24 @@ footer {
   gap: 24px;
 }
 .footer-sns a {
-  font-size: 0.6rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: none;
   color: var(--text-muted);
   transition: color 0.3s;
 }
 .footer-sns a:hover { color: var(--accent); }
+.footer-sns a img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+.footer-sns a:hover img { opacity: 1; }
 .footer-copy {
   font-size: 0.6rem;
   letter-spacing: 0.15em;

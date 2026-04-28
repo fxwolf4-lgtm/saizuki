@@ -9,14 +9,14 @@
   <meta name="keywords" content="Saizuki Tsukushi,SAIZUKI TSUKUSHI,Takarazuka,actress,talent,stage,Snow Troupe">
   <meta name="author" content="SAIZUKI TSUKUSHI">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://saizuki.com/en/">
+  <meta property="og:url" content="https://www.saizuki.com/en/">
   <meta property="og:title" content="SAIZUKI TSUKUSHI Official Website | Actress &amp; Talent">
   <meta property="og:description" content="Official website of Saizuki Tsukushi, former Takarazuka Revue Snow Troupe actress.">
-  <meta property="og:image" content="https://saizuki.com/images/og-image.jpg">
+  <meta property="og:image" content="https://www.saizuki.com/images/og-image.jpg">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:site" content="@ii_tsukushi_ii">
 
-  <link rel="canonical" href="https://saizuki.com/en/">
+  <link rel="canonical" href="https://www.saizuki.com/en/">
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
     "@type": "Person",
     "name": "Saizuki Tsukushi",
     "alternateName": "SAIZUKI TSUKUSHI",
-    "url": "https://saizuki.com/en/",
+    "url": "https://www.saizuki.com/en/",
     "jobTitle": "Actress & Talent",
     "description": "Former Takarazuka Revue Snow Troupe member (97th class). Currently active as an actress and talent in stage, screen, MC, and lectures.",
     "affiliation": {
@@ -64,7 +64,7 @@
     "@type": "WebSite",
     "name": "SAIZUKI TSUKUSHI Official Website",
     "alternateName": "Saizuki Tsukushi Official Website",
-    "url": "https://saizuki.com/en/"
+    "url": "https://www.saizuki.com/en/"
   }
   </script>
 
@@ -76,7 +76,7 @@
     .carousel {
       position: relative;
       width: 100vw;
-      height: 100svh;
+      height: min(100svh, 100vh);
       overflow: hidden;
     }
     .carousel-slide {
@@ -262,6 +262,8 @@
     }
 
     @media (max-width: 768px) {
+      .carousel-slide img { object-position: center center !important; }
+      .carousel-slide:nth-child(1) img { object-position: 70% 30% !important; }
       .carousel-logo-main { font-size: clamp(1.8rem, 8vw, 2.5rem); }
       .scroll-hint { display: none; }
       .home-news { padding: 60px 24px; }
@@ -282,12 +284,14 @@
     <li><a href="profile.html">Profile</a></li>
     <li><a href="news.html">News</a></li>
     <li><a href="biography.html">Biography</a></li>
-    <li><a href="works.html">Works</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <button class="nav-toggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <a href="../index.html" class="nav-lang">JA</a>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- Mobile menu -->
@@ -296,8 +300,8 @@
   <a href="profile.html">Profile</a>
   <a href="news.html">News</a>
   <a href="biography.html">Biography</a>
-  <a href="works.html">Works</a>
   <a href="contact.html">Contact</a>
+  <a href="../index.html" style="font-size:0.9rem;color:var(--accent);margin-top:20px;">日本語</a>
 </div>
 
 <main>
@@ -348,8 +352,8 @@
 <footer>
   <div class="footer-logo">SAIZUKI TSUKUSHI</div>
   <div class="footer-sns">
-    <a href="https://www.instagram.com/iii_tsukushi_iii/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://x.com/ii_tsukushi_ii" target="_blank" rel="noopener">X / Twitter</a>
+    <a href="https://www.instagram.com/iii_tsukushi_iii/" target="_blank" rel="noopener"><img src="../images/instagram-logo.svg" alt="Instagram" width="24" height="24"><span>@iii_tsukushi_iii</span></a>
+    <a href="https://x.com/ii_tsukushi_ii" target="_blank" rel="noopener"><img src="../images/x-logo.svg" alt="X" width="24" height="24"><span>@ii_tsukushi_ii</span></a>
   </div>
   <p class="footer-copy">&copy; SAIZUKI TSUKUSHI All rights reserved.</p>
 </footer>

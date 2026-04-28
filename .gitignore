@@ -1,0 +1,17 @@
+# Claude Code
+CLAUDE.md
+.claude/
+
+# Project docs (not for public)
+README.md
+
+# Backoffice (financial data, internal tools)
+backoffice/
+
+# Archives
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
